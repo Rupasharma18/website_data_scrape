@@ -18,23 +18,23 @@ def list_of_ngo(url):
     cause_list = []
     for i in tr:
         td = i.find_all('td', class_="jsx-697282504")
-        for one in td[:1]:
-            text_1 = one.text
+        for state in td[:1]:
+            text_1 = state.text
             state_list.append(text_1)
            
-        for two in td[1:2]:
-            text_2 = two.text
+        for name in td[1:2]:
+            text_2 = name.text
             name_list.append(text_2)
            
-        for three in td[2:3]:
-            text_3 = three.text
+        for cause in td[2:3]:
+            text_3 = cause.text
             cause_list.append(text_3)
         dic['state'] = state_list
         dic['name'] = name_list
-        dic['cause'] = _list
+        dic['cause'] = cause_list
     return dic
 ngos_list =list_of_ngo(first_call)
-# pprint (ngos_list)
+pprint (ngos_list)
 
 def state_by_ngo(list1):
     dic = {}
